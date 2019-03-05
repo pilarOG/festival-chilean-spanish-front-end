@@ -38,7 +38,6 @@
 (set! token.prepunctuation "\"`¿")
 
 (set! pos_lex_name nil)
-(set! guess_pos spanish_guess_pos)
 
 (lex.select 'spanlex)
 (set! postlex_rules_hooks (list postlex_cw_semivowels postlex_cw_semiconsonants postlex_cw_aproximants))
@@ -48,7 +47,25 @@
 (Parameter.set 'Phrase_Method 'cart_tree)
 (set! phrase_cart_tree spanish_phrase_cart_tree)
 
-(Parameter.set 'Pause_Method MultiSyn_Pauses) ;;
-(Parameter.set 'Int_Method nil) ;;
-(Parameter.set 'Int_Target_Method nil) ;;
-(Parameter.set 'Duration_Method nil) ;;
+(Parameter.set 'Pause_Method MultiSyn_Pauses)
+(Parameter.set 'Int_Method nil)
+(Parameter.set 'Int_Target_Method nil)
+(Parameter.set 'Duration_Method nil)
+(Parameter.set 'Language 'spanish)
+(Parameter.set 'POS_Method spanish_guess_pos)
+(Parameter.set 'Phrasify_Method spanish_phrase_cart_tree)
+(Parameter.set 'PostLex_Method postlex_rules_hooks)
+(Parameter.set 'Audio_Command "")
+(Parameter.set 'Audio_Method 'Audio_Command)
+
+(define (utt.synth_toSegment_text utt)
+  (Initialize utt)
+  (Text utt)
+  (Token_POS utt)
+  (Token utt)
+  (POS utt)
+  (Phrasify utt)
+  (Word utt)
+  (Pauses utt)
+  (Intonation utt)
+  (PostLex utt))
