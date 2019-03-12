@@ -139,6 +139,8 @@ Here "#" means silence, or end of the word. If we know that words that are stres
 
 This a very simple implementation of a front-end in Festival. Festival has many complex voices, specially in English, that makes use of more complex mechanisms such as CART to predict out of lexicon transcriptions.
 
+## If you use this code
+
 If you use any of these code please cite: Oplustil, P. (2016). Multi-style Text-to-Speech using Recurrent Neural Networks for Chilean Spanish. Master dissertation. University of Edinburgh.
 
 ## References
